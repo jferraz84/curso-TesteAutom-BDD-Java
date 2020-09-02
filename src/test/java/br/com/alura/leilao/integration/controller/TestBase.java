@@ -13,7 +13,7 @@ public class TestBase {
 	public List<Usuario> getUsuariosFulanoEBeltrano() {
 		Usuario fulano = getUsuarioFulano();
 		
-		Usuario beltrano = new Usuario("beltrano", "beltrano@gmail.com", "pass");
+		Usuario beltrano = new Usuario("Beltrano", "beltrano@gmail.com", "pass");
 		beltrano.setRole("ROLE_USER");
 		beltrano.activa();
 		
