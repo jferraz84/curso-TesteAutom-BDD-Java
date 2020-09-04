@@ -10,6 +10,7 @@ import org.junit.Assert;
 import br.com.alura.leilao.model.Lance;
 import br.com.alura.leilao.model.Leilao;
 import br.com.alura.leilao.model.Usuario;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
@@ -27,10 +28,10 @@ public class PropondoLancesSteps {
 		leilao = new Leilao("Tablet");
 	}
 
-//	@After
-//	public void tearDown() {
-//		System.out.println("After");
-//	}
+	@After
+	public void tearDown() {
+		System.out.println("After");
+	}
 
 	@Dado("um lance valido")
 	public void dado_um_lance_valido() {
@@ -87,20 +88,19 @@ public class PropondoLancesSteps {
 	public void o_lance_nao_eh_aceito() {
 		Assert.assertEquals(0, leilao.getLances().size());
 	}
-	
+
 	@Dado("dois lances")
 	public void dois_lances(io.cucumber.datatable.DataTable dataTable) {
 		List<Map<String, String>> valores = dataTable.asMaps();
-		
+
 		for (Map<String, String> mapa : valores) {
 			String valor = mapa.get("valor");
 			String nome = mapa.get("nomeUsuario");
-			
-			Lance lance = new Lance(new Usuario (nome), new BigDecimal(valor));
+
+			Lance lance = new Lance(new Usuario(nome), new BigDecimal(valor));
 			lista.add(lance);
 		}
-		
-		
+
 	}
 
 	@Entao("o segundo lance nao eh aceito")
@@ -109,8 +109,4 @@ public class PropondoLancesSteps {
 		Assert.assertEquals(this.lista.get(0).getValor(), leilao.getLances().get(0).getValor());
 	}
 
-	
-	
-	
-	
 }

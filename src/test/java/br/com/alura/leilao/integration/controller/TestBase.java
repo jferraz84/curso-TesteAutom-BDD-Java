@@ -13,7 +13,7 @@ public class TestBase {
 	public List<Usuario> getUsuariosFulanoEBeltrano() {
 		Usuario fulano = getUsuarioFulano();
 		
-		Usuario beltrano = new Usuario("Beltrano", "beltrano@gmail.com", "pass");
+		Usuario beltrano = new Usuario("beltrano", "beltrano@gmail.com", "pass");
 		beltrano.setRole("ROLE_USER");
 		beltrano.activa();
 		
@@ -21,7 +21,7 @@ public class TestBase {
 	}
 
 	public Usuario getUsuarioFulano() {
-		Usuario fulano = new Usuario("Fulano", "fulano@gmail.com", "pass");
+		Usuario fulano = new Usuario("fulano", "fulano@gmail.com", "pass");
 		fulano.setRole("ROLE_USER");
 		fulano.activa();
 		return fulano;
@@ -29,7 +29,7 @@ public class TestBase {
 	
 	
 	public Usuario getUsuarioCigano() {
-		Usuario fulano = new Usuario("Cigano", "cigano@gmail.com", "pass");
+		Usuario fulano = new Usuario("cigano", "cigano@gmail.com", "pass");
 		fulano.setRole("ROLE_USER");
 		fulano.activa();
 		return fulano;

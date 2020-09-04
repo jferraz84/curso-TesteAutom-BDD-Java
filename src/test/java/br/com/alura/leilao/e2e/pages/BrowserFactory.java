@@ -11,9 +11,9 @@ public class BrowserFactory {
 //	http://chromedriver.storage.googleapis.com/index.html
 //	https://github.com/mozilla/geckodriver/releases	
 
-	
+	//htmlunit
 	public WebDriver createWebDriver() {
-		String webdriver = System.getProperty("browser", "htmlunit");
+		String webdriver = System.getProperty("browser", "chrome");
 		switch (webdriver) {
 			case "firefox":
 				return initFirefoxDriver();
